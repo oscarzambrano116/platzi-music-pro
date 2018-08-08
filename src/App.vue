@@ -1,15 +1,50 @@
 <template lang="pug">
   #app
-    img(src="./assets/logo.png")
-    h1 {{ msg }}
+    section.section
+      nav.nav.has-shadow
+        .container
+          .field.has-addons
+            input.input.is-large(
+              type="text",
+              placeholder="Buscar canciones",
+              v-model="searchQuery",
+            )
+            a.button.is-info.is-large(@click="search") Buscar
+            a.button.is-danger.is-large &times;
+            p
+              small {{ searchMessage }}
+
+      .container
+        .columns.results
+          .column(v-for="t in tracks") {{ t.name }} - {{ t.artist }}
 </template>
 
 <script>
+
+const tracks = [
+  { name: 'a', artist: 'a' },
+  { name: 'b', artist: 'b' },
+  { name: 'c', artist: 'c' },
+  { name: 'd', artist: 'd' }
+]
+
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      searchQuery: '',
+      tracks: []
+    }
+  },
+  methods: {
+    search () {
+      console.log(this.searchQuery)
+      this.tracks = tracks
+    }
+  },
+  computed: {
+    searchMessage () {
+      return `Encontrados ${this.tracks.length}`
     }
   }
 }
@@ -17,4 +52,9 @@ export default {
 
 <style lang="scss">
   @import './scss/main.scss';
+
+  .results {
+    margin-top: 50px;
+  }
+
 </style>
