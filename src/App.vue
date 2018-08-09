@@ -84,11 +84,11 @@ export default {
     PmNotification
   },
   watch: {
-    showNotification() {
+    showNotification () {
       if (this.showNotification) {
         setTimeout(() => {
           this.showNotification = false
-        }, 3000);
+        }, 3000)
       }
     }
   }
