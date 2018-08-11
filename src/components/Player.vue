@@ -3,8 +3,8 @@
     p
       img(:src="track.album.images[0].url")
     p
-      strong {{ track.name }}
-      small [{{ track.duration_ms | ms-to-mm }}]
+      strong {{ `${track.name}`  }}
+      small  [{{ track.duration_ms | ms-to-mm }}]
     p
       audio(controls, :src="track.preview_url")
 </template>
@@ -30,5 +30,8 @@ export default {
   img {
     width: 124px;
     border-radius: 50%;
+  }
+  audio {
+    margin-top: 50px;
   }
 </style>
