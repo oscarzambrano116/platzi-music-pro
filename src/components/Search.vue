@@ -1,10 +1,12 @@
 <template lang="pug">
   main
+    transition(name="move")
+      pm-notification(v-show="showNotification")
+        p(slot="body") No se encontraron resultados
 
-    pm-notification(v-show="showNotification")
-      p(slot="body") No se encontraron resultados
+    transition(name="move")
+      pm-loader(v-show="isLoading")
 
-    pm-loader(v-show="isLoading")
     section.section(v-show="!isLoading")
       nav.nav
         .container
