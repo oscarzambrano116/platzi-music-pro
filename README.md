@@ -1,7 +1,7 @@
 # platzi-music-pro
 
 > Vue.js professional Platzi course 
-[App link](https://platzi-music-pro-mnctwliozw.now.sh/)
+[App link](https://platzi-music-pro.now.sh/)
 
 ## Build Setup
 
