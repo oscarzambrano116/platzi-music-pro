@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from '@/App.vue'
+import i18n from '@/i18n'
 
 import routes from '@/routes'
 import store from '@/store'
@@ -25,5 +26,6 @@ new Vue({
   el: '#app',
   render: h => h(App),
   router,
-  store
+  store,
+  i18n
 })
