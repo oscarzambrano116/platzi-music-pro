@@ -29,6 +29,11 @@
         track: {}
       }
     },
+    head() {
+      return {
+        title: this.track.name
+      }
+    }
     asyncData ({ params }) {
       const id = params.id
 
